@@ -1,7 +1,7 @@
 const loadingCircle = document.getElementById('loadingCircle');
 const gifPopup = document.getElementById('gifPopup');
 const popupGif = document.getElementById('popupGif');
-const closeButton = document.getElementById('closeButton');
+const closeButton = document.getElementById('closeButton'); // 最初から配置されている×ボタン
 const markerStatus = document.getElementById('markerStatus');
 const markerBoundary = document.getElementById('markerBoundary');
 
@@ -90,6 +90,7 @@ function showPopupGif(gifPathsArray) {
         playGif(currentGifIndex);
     });
 
+    // 最初から配置されている×ボタンのクリックイベント
     closeButton.addEventListener('click', () => {
         gifPopup.style.display = 'none';
         isPlaying = false;
