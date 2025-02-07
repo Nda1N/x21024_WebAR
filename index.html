@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -16,19 +15,18 @@
 
     <div id="gifPopup">
         <img id="popupGif" />
-        <button id="closeButton">✖︎</button> <!-- 閉じるボタン -->
+        <div id="closeButton">✖︎</div> <!-- 閉じるボタン -->
     </div>
-
-    <div id="tapHint">タップで映像を切り替える</div>
 
     <div id="markerStatus">マーカーが見つかりません</div>
 
     <div id="markerBoundary"></div>
 
-    <!-- ①と②のボタン追加 -->
-    <div id="switchButtons">
+    <!-- ボタンと閉じるボタン -->
+    <div id="buttonContainer">
         <button id="button1" class="switchButton red">①</button>
         <button id="button2" class="switchButton blue">②</button>
+        <button id="closeButton">✖︎</button>
     </div>
 
     <a-scene embedded arjs>
