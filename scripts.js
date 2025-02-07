@@ -2,7 +2,6 @@ const loadingCircle = document.getElementById('loadingCircle');
 const gifPopup = document.getElementById('gifPopup');
 const popupGif = document.getElementById('popupGif');
 const closeButton = document.getElementById('closeButton');
-const tapHint = document.getElementById('tapHint');
 const markerStatus = document.getElementById('markerStatus');
 const markerBoundary = document.getElementById('markerBoundary');
 
@@ -60,7 +59,6 @@ function showPopupGif(gifPathsArray) {
 
     function playGif(index) {
         gif.src = gifPathsArray[index];
-        tapHint.style.display = 'block';
     }
 
     loadingCircle.style.display = 'block';
@@ -96,7 +94,6 @@ function showPopupGif(gifPathsArray) {
         gifPopup.style.display = 'none';
         isPlaying = false;
         markerBoundary.style.display = 'block';
-        tapHint.style.display = 'none';
         markerStatus.style.display = "none";
     });
 }
