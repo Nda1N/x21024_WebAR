@@ -59,11 +59,11 @@ function showPopupGif(gifPathsArray) {
 
     function playGif(index) {
         gif.src = gifPathsArray[index];
+        markerBoundary.style.display = 'none';  // ポップアップ中にマーカー枠を隠す
     }
 
     loadingCircle.style.display = 'block';
     gifPopup.style.display = 'none';
-    markerBoundary.style.display = 'none';
 
     gif.onload = () => {
         loadingCircle.style.display = 'none';
@@ -94,7 +94,7 @@ function showPopupGif(gifPathsArray) {
         gifPopup.style.display = 'none';
         isPlaying = false;
         markerBoundary.style.display = 'block';
-        markerStatus.style.display = "none";
+        updateMarkerStatus(true, false);  // マーカー未検出の状態に戻す
     });
 }
 
