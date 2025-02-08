@@ -1,7 +1,9 @@
+
 const loadingCircle = document.getElementById('loadingCircle');
 const gifPopup = document.getElementById('gifPopup');
 const popupGif = document.getElementById('popupGif');
-const closeButton = document.getElementById('closeButton'); // 最初から配置されている×ボタン
+const closeButton = document.getElementById('closeButton');
+const tapHint = document.getElementById('tapHint');
 const markerStatus = document.getElementById('markerStatus');
 const markerBoundary = document.getElementById('markerBoundary');
 
@@ -59,11 +61,12 @@ function showPopupGif(gifPathsArray) {
 
     function playGif(index) {
         gif.src = gifPathsArray[index];
-        markerBoundary.style.display = 'none';  // ポップアップ中にマーカー枠を隠す
+        tapHint.style.display = 'block';
     }
 
     loadingCircle.style.display = 'block';
     gifPopup.style.display = 'none';
+    markerBoundary.style.display = 'none';
 
     gif.onload = () => {
         loadingCircle.style.display = 'none';
@@ -90,12 +93,12 @@ function showPopupGif(gifPathsArray) {
         playGif(currentGifIndex);
     });
 
-    // 最初から配置されている×ボタンのクリックイベント
     closeButton.addEventListener('click', () => {
         gifPopup.style.display = 'none';
         isPlaying = false;
         markerBoundary.style.display = 'block';
-        updateMarkerStatus(true, false);  // マーカー未検出の状態に戻す
+        tapHint.style.display = 'none';
+        markerStatus.style.display = "none";
     });
 }
 
